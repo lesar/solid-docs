@@ -1086,8 +1086,8 @@ Path can be string keys, array of keys, iterating objects ({from, to, by}), or f
 ```js
 const [state, setState] = createStore({
   todos: [
-    { task: 'Finish work', completed: false }
-    { task: 'Go grocery shopping', completed: false }
+    { task: 'Finish work', completed: false },
+    { task: 'Go grocery shopping', completed: false },
     { task: 'Make dinner', completed: false }
   ]
 });
@@ -1095,8 +1095,8 @@ const [state, setState] = createStore({
 setState('todos', [0, 2], 'completed', true);
 // {
 //   todos: [
-//     { task: 'Finish work', completed: true }
-//     { task: 'Go grocery shopping', completed: false }
+//     { task: 'Finish work', completed: true },
+//     { task: 'Go grocery shopping', completed: false },
 //     { task: 'Make dinner', completed: true }
 //   ]
 // }
@@ -1104,8 +1104,8 @@ setState('todos', [0, 2], 'completed', true);
 setState('todos', { from: 0, to: 1 }, 'completed', c => !c);
 // {
 //   todos: [
-//     { task: 'Finish work', completed: false }
-//     { task: 'Go grocery shopping', completed: true }
+//     { task: 'Finish work', completed: false },
+//     { task: 'Go grocery shopping', completed: true },
 //     { task: 'Make dinner', completed: true }
 //   ]
 // }
@@ -1113,8 +1113,8 @@ setState('todos', { from: 0, to: 1 }, 'completed', c => !c);
 setState('todos', todo => todo.completed, 'task', t => t + '!')
 // {
 //   todos: [
-//     { task: 'Finish work', completed: false }
-//     { task: 'Go grocery shopping!', completed: true }
+//     { task: 'Finish work', completed: false },
+//     { task: 'Go grocery shopping!', completed: true },
 //     { task: 'Make dinner!', completed: true }
 //   ]
 // }
@@ -1122,8 +1122,8 @@ setState('todos', todo => todo.completed, 'task', t => t + '!')
 setState('todos', {}, todo => ({ marked: true, completed: !todo.completed }))
 // {
 //   todos: [
-//     { task: 'Finish work', completed: true, marked: true }
-//     { task: 'Go grocery shopping!', completed: false, marked: true }
+//     { task: 'Finish work', completed: true, marked: true },
+//     { task: 'Go grocery shopping!', completed: false, marked: true },
 //     { task: 'Make dinner!', completed: false, marked: true }
 //   ]
 // }
